@@ -6,13 +6,13 @@ const querysDB = require('../service/ProductService')
 
 
 server.get('/event', async (req, res) => {
-    const clientes = await querysDB.selectAll();
-    return res.status(200).json(clientes)
+    const event = await querysDB.selectAll();
+    return res.status(200).json(event)
 })
 
 server.get('/event/:id', async (req, res) => {
-    const clientes = await querysDB.selectUnique(req.params.id);
-    return res.status(200).json(clientes)
+    const events = await querysDB.selectUnique(req.params.id);
+    return res.status(200).json(events)
 })
 
 server.post('/event', async (req, res) => {
