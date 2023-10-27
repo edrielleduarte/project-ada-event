@@ -1,9 +1,7 @@
 const express = require('express')
 const server = express.Router()
-const app = express()
 
 const querysDB = require('../service/ProductService')
-
 
 server.get('/event', async (req, res) => {
     const event = await querysDB.selectAll();
